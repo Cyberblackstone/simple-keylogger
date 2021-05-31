@@ -11,25 +11,25 @@ import datetime
 
 # makes the header look fancy
 def prettify(self):
-		usr = str(os.getenv('USER'))
-		dt = str(datetime.datetime.now())
-		head = '\n<' + dt + '@' + usr + ' LOCAL' + '>'
-		body = self
+	usr = str(os.getenv('USER'))
+	dt = str(datetime.datetime.now())
+	head = '\n<' + dt + '@' + usr + ' LOCAL' + '>'
+	body = self
 		
-		return head +''+body 
+	return head +''+body 
 
 
 # Logs the text into given path
 def log(self, text):
 		
-		if os.path.exists(self) is True:
-			with open(self, 'a') as f:
-				f.write(text)
-				f.close()
-		else:
-			with open(self, 'x') as f:
-				f.write(text)
-				f.close()
+	if os.path.exists(self) is True:
+		with open(self, 'a') as f:
+			f.write(text)
+			f.close()
+	else:
+		with open(self, 'x') as f:
+			f.write(text)
+			f.close()
 	
 
 
